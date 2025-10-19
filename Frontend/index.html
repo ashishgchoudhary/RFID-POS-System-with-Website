@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RFID Smart POS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <h1>🛒 RFID Smart POS</h1>
+    <p>Real-time product tracking & checkout</p>
+  </div>
+  <div class="status-container" id="scan-status">
+    Ready to scan...
+  </div>
+</header>
+
+<main>
+  <section class="table-container">
+    <table id="products-table">
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Products will be dynamically injected here -->
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Floating Total & Checkout -->
+  <div class="total-container">
+    <div class="total-info">
+      <h2>Total: $<span id="total-price">0.00</span></h2>
+      <p id="total-items">Items: 0</p>
+    </div>
+    <button class="checkout-btn"><i class="fa-solid fa-credit-card"></i> Checkout</button>
+  </div>
+</main>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="scripts/app.js"></script>
+</body>
+</html>
